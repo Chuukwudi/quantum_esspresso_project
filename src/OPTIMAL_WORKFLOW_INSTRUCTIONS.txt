@@ -1,0 +1,64 @@
+
+=== OPTIMAL QE WORKFLOW FOR STANFORD PROJECT ===
+
+## COMPUTATIONAL METHODOLOGY
+
+This package implements the optimal DFT workflow:
+1. **Structural relaxation** → Find lowest energy geometry  
+2. **Geometry extraction** → Extract relaxed atomic positions
+3. **Final SCF calculation** → Accurate electronic structure on optimized geometry
+
+This ensures both geometric and electronic convergence for reliable energy comparisons.
+
+## SETUP
+
+1. Install Quantum ESPRESSO:
+   brew install quantum-espresso  # or conda install
+
+2. Extract package and setup:
+   unzip stanford_qe_full_optimal_collaboration.zip
+   cd collaboration_package_full_optimal
+   chmod +x setup_mac_optimal.sh scripts/*.py
+   ./setup_mac_optimal.sh
+
+## AUTOMATED WORKFLOW
+
+3. Run complete automated workflow:
+   chmod +x run_optimal_workflow.sh
+   ./run_optimal_workflow.sh
+
+   This automatically runs all steps for all systems.
+
+## MANUAL WORKFLOW (if you prefer step-by-step)
+
+For each system (system1, system2, system3):
+
+4. Run relaxation:
+   cd system1
+   pw.x < ../input_files/system1_relax.in > system1_relax.out 2>&1
+
+5. Extract relaxed geometry:
+   python3 ../scripts/extract_geometry.py system1_relax.out system1
+
+6. Run final SCF on relaxed structure:
+   pw.x < system1_scf_on_relaxed.in > system1_scf_on_relaxed.out 2>&1
+
+7. Repeat for system2 and system3
+
+## RESULTS TO RETURN
+
+Send back:
+- stanford_qe_optimal_results.tar.gz (all output files)
+- calculation_log.txt (summary of what completed)
+
+## EXPECTED COMPUTATION TIME
+
+Light version: 8-20 hours total
+Full version: 24-72 hours total
+
+The optimal workflow takes longer but provides publication-quality accuracy.
+
+
+
+
+watch -n 5 "tail -1 src/system1/system1_relax.out; grep -c 'iteration' src/system1/system1_relax.out"

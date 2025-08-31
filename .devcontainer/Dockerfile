@@ -15,6 +15,8 @@ RUN apt-get update && \
     curl \
     git \
     build-essential \
+    quantum-espresso \
+    wannier90 \
     tree \
     htop \
     gnupg \
