@@ -1,0 +1,58 @@
+name: Deploy Lambda Function with Dependencies
+
+on:
+  push:
+    paths:
+      - "src/**"
+      - "requirements.txt"
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Setup Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      # Install dependencies in a directory that will be zipped
+      - name: Install Python dependencies
+        run: |
+          mkdir -p package
+          pip install -r requirements.txt -t package/
+
+      # Add your Lambda function code to the package directory
+      - name: Prepare Lambda deployment package
+        run: |
+          cp -R src/* package/
+
+      # Create a Zip file for the Lambda function, including dependencies
+      - name: Create Zip file for Lambda function
+        run: |
+          cd package
+          zip -r ../code.zip .
+
+      # Configure AWS Credentials
+      - name: Deploy to AWS Lambda
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
+
+      # Upload the Zip file to S3
+      - name: Upload function code to S3
+        run: |
+          aws s3 cp code.zip s3://gvms/mobius-avara-exports.zip
+
+      # Update Lambda function code to use the S3 object
+      - name: Update Lambda function code
+        run: |
+          aws lambda update-function-code \
+          --function-name arn:aws:lambda:eu-west-1:891377350630:function:mobius-avara-exports \
+          --s3-bucket gvms \
+          --s3-key mobius-avara-exports.zip

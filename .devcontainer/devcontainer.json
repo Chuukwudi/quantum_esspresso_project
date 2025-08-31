@@ -1,0 +1,28 @@
+{
+    "name": "Python",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "devcontainer",
+    "workspaceFolder": "/app",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1.6.3": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "GitHub.copilot",
+                "tamasfe.even-better-toml",
+                "ms-python.python",
+                "ms-python.debugpy",
+                "ms-toolsai.jupyter",
+                "cweijan.vscode-office"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.pythonPath": "/usr/local/bin/python",
+                "jupyter.kernels.excludePythonEnvironments": [
+                    "/usr/bin/python*"
+                ]
+            }
+        }
+    }
+}
