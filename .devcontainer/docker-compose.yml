@@ -9,8 +9,4 @@ services:
         - "linux/amd64" # https://docs.docker.com/reference/compose-file/build/#:~:text=platforms-,platforms,-defines%20a%20list
     volumes:
       - ..:/app
-      - ~/.aws:/home/vscode/.aws # for aws iam
-      - ~/.jurn:/home/vscode/.jurn # for jurn
-    # environment:
-    #   - USER=chukwudi
     tty: true
