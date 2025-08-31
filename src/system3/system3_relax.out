@@ -1,0 +1,343 @@
+
+     Program PWSCF v.6.7MaX starts on 31Aug2025 at 21: 8:37 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    10 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      10
+     Waiting for input...
+     Reading input from standard input
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+     Message from routine read_pp_mesh:
+     mesh size missing, using the one in header
+     file C.pbe-n-kjpaw_psl.1.0.0.UPF: wavefunction(s)  2S 2P renormalized
+     file Fe.pbe-spn-kjpaw_psl.0.2.1.UPF: wavefunction(s)  3D renormalized
+     file O.pbe-n-kjpaw_psl.0.1.UPF: wavefunction(s)  2P renormalized
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     one sub-group per band group will be used
+     scalapack distributed-memory algorithm (size of sub-group:  3*  3 procs)
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        2716    1359    339               634184   224207   28037
+     Max        2717    1360    340               634187   224210   28044
+     Sum       27167   13591   3399              6341853  2242085  280401
+
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =      31.4279  a.u.
+     unit-cell volume          =   65603.1044 (a.u.)^3
+     number of atoms/cell      =           85
+     number of atomic types    =            9
+     number of electrons       =       594.00
+     number of Kohn-Sham states=          356
+     kinetic-energy cutoff     =      40.0000  Ry
+     charge density cutoff     =     320.0000  Ry
+     scf convergence threshold =      1.0E-06
+     mixing beta               =       0.3000
+     number of iterations used =            8  plain     mixing
+     energy convergence thresh.=      1.0E-04
+     force convergence thresh. =      1.0E-03
+     Exchange-correlation=  SLA  PW   PBX  PBC
+                           (   1   4   3   4   0   0   0)
+     nstep                     =           50
+
+
+     celldm(1)=  31.427946  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   1.079679   0.000000 )  
+               a(3) = (   0.000000   0.000000   1.957410 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.000000  0.000000  0.000000 )  
+               b(2) = (  0.000000  0.926202  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.510879 )  
+
+
+     PseudoPot. # 1 for C  read from file:
+     ../pseudopotentials/C.pbe-n-kjpaw_psl.1.0.0.UPF
+     MD5 check sum: 5d2aebdfa2cae82b50a7e79e9516da0f
+     Pseudo is Projector augmented-wave + core cor, Zval =  4.0
+     Generated using "atomic" code by A. Dal Corso  v.5.1
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1073 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for Fe read from file:
+     ../pseudopotentials/Fe.pbe-spn-kjpaw_psl.0.2.1.UPF
+     MD5 check sum: e86618425769142926afa95317d90200
+     Pseudo is Projector augmented-wave + core cor, Zval = 16.0
+     Generated using "atomic" code by A. Dal Corso  v.5.0.99 svn rev. 10869
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1191 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 3 for H  read from file:
+     ../pseudopotentials/H.pbe-rrkjus_psl.1.0.0.UPF
+     MD5 check sum: f52b6d4d1c606e5624b1dc7b2218f220
+     Pseudo is Ultrasoft, Zval =  1.0
+     Generated using "atomic" code by A. Dal Corso  v.5.1
+     Using radial grid of  929 points,  2 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 4 for Li read from file:
+     ../pseudopotentials/Li_pbe_v1.5.uspp.F.UPF
+     MD5 check sum: e912e257baa3777c20ea3d68f190483c
+     Pseudo is Ultrasoft, Zval =  3.0
+     Generated by new atomic code, or converted to UPF format
+     Using radial grid of  751 points,  5 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   0
+                l(4) =   1
+                l(5) =   1
+     Q(r) pseudized with 10 coefficients,  rinner =    1.150   1.150   1.150
+
+
+     PseudoPot. # 5 for Mo read from file:
+     ../pseudopotentials/Mo_ONCV_PBE-1.0.oncvpsp.UPF
+     MD5 check sum: 1b5d28e075c9ccadda658a603575cd1f
+     Pseudo is Norm-conserving, Zval = 14.0
+     Generated using ONCVPSP code by D. R. Hamann
+     Using radial grid of 1526 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+
+     PseudoPot. # 6 for Na read from file:
+     ../pseudopotentials/na_pbe_v1.5.uspp.F.UPF
+     MD5 check sum: 44600605ef58000f06b90626533354dc
+     Pseudo is Ultrasoft, Zval =  9.0
+     Generated by new atomic code, or converted to UPF format
+     Using radial grid of  819 points,  5 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+     Q(r) pseudized with  8 coefficients,  rinner =    1.250   1.250   1.250
+                                                       1.250   1.250
+
+     PseudoPot. # 7 for O  read from file:
+     ../pseudopotentials/O.pbe-n-kjpaw_psl.0.1.UPF
+     MD5 check sum: 0234752ac141de4415c5fc33072bef88
+     Pseudo is Projector augmented-wave + core cor, Zval =  6.0
+     Generated using "atomic" code by A. Dal Corso  v.5.0.99 svn rev. 10869
+     Shape of augmentation charge: BESSEL
+     Using radial grid of 1095 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 8 for P  read from file:
+     ../pseudopotentials/P.pbe-n-rrkjus_psl.1.0.0.UPF
+     MD5 check sum: 8b930f418f0a4573dca56cd030ffe088
+     Pseudo is Ultrasoft + core correction, Zval =  5.0
+     Generated using "atomic" code by A. Dal Corso  v.5.1
+     Using radial grid of 1147 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 9 for S  read from file:
+     ../pseudopotentials/s_pbe_v1.4.uspp.F.UPF
+     MD5 check sum: 88d86576ff6df21479756cfb9bdac1df
+     Pseudo is Ultrasoft + core correction, Zval =  6.0
+     Generated by new atomic code, or converted to UPF format
+     Using radial grid of  907 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with  8 coefficients,  rinner =    1.300   1.300   1.300
+                                                       1.300   1.300
+
+     atomic species   valence    mass     pseudopotential
+        C              4.00    12.01000     C ( 1.00)
+        Fe            16.00    55.84500     Fe( 1.00)
+        H              1.00     1.00800     H ( 1.00)
+        Li             3.00     6.94100     Li( 1.00)
+        Mo            14.00    95.96000     Mo( 1.00)
+        Na             9.00    22.99000     Na( 1.00)
+        O              6.00    16.00000     O ( 1.00)
+        P              5.00    30.97000     P ( 1.00)
+        S              6.00    32.07000     S ( 1.00)
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           Na  tau(   1) = (   0.3969702   0.7654724   0.8181948  )
+         2           Na  tau(   2) = (   0.3979729   0.7650854   0.5069719  )
+         3           Na  tau(   3) = (   0.4981860   0.6695099   0.6601551  )
+         4           Na  tau(   4) = (   0.3006442   0.6692511   0.9732447  )
+         5           Na  tau(   5) = (   0.4984397   0.6689511   0.9723175  )
+         6           Na  tau(   6) = (   0.5018140   0.4101686   0.8215352  )
+         7           Na  tau(   7) = (   0.5015603   0.4107273   0.5093728  )
+         8           Na  tau(   8) = (   0.6993558   0.4104275   0.5084455  )
+         9           Na  tau(   9) = (   0.6030298   0.3142062   0.6634955  )
+        10           Na  tau(  10) = (   0.6020271   0.3145931   0.9747183  )
+        11           Li  tau(  11) = (   0.3018636   0.6650460   0.6598414  )
+        12           Li  tau(  12) = (   0.6981367   0.4146325   0.8218489  )
+        13           Fe  tau(  13) = (   0.5985156   0.6178737   0.8273309  )
+        14           Fe  tau(  14) = (   0.5992464   0.6181579   0.5167675  )
+        15           Fe  tau(  15) = (   0.4014844   0.4618049   0.6543594  )
+        16           Fe  tau(  16) = (   0.4007536   0.4615206   0.9649228  )
+        17           P   tau(  17) = (   0.3976440   0.5859087   0.8017707  )
+        18           P   tau(  18) = (   0.4002411   0.5865523   0.4915276  )
+        19           P   tau(  19) = (   0.6023560   0.4937698   0.6799196  )
+        20           P   tau(  20) = (   0.5997589   0.4931263   0.9901626  )
+        21           C   tau(  21) = (   0.5997167   0.7790343   0.8085217  )
+        22           C   tau(  22) = (   0.5971866   0.7774294   0.4970887  )
+        23           C   tau(  23) = (   0.4002833   0.3006442   0.6731686  )
+        24           C   tau(  24) = (   0.4028134   0.3022491   0.9846016  )
+        25           O   tau(  25) = (   0.3925322   0.7628845   0.6696432  )
+        26           O   tau(  26) = (   0.3991563   0.7649725   0.9816541  )
+        27           O   tau(  27) = (   0.5972999   0.7446458   0.8787814  )
+        28           O   tau(  28) = (   0.5979864   0.7435116   0.5677727  )
+        29           O   tau(  29) = (   0.5993661   0.7342141   0.7443126  )
+        30           O   tau(  30) = (   0.5980775   0.7326028   0.4331003  )
+        31           O   tau(  31) = (   0.3248979   0.6382123   0.8294031  )
+        32           O   tau(  32) = (   0.4739961   0.6346761   0.8271320  )
+        33           O   tau(  33) = (   0.3260675   0.6378805   0.5182930  )
+        34           O   tau(  34) = (   0.4752452   0.6377232   0.5157626  )
+        35           O   tau(  35) = (   0.3957933   0.5785792   0.7081713  )
+        36           O   tau(  36) = (   0.6043928   0.5785852   0.6413469  )
+        37           O   tau(  37) = (   0.3992855   0.5760671   1.0227265  )
+        38           O   tau(  38) = (   0.5988779   0.5761860   0.9493108  )
+        39           O   tau(  39) = (   0.3956072   0.5010933   0.8403434  )
+        40           O   tau(  40) = (   0.6042067   0.5010992   0.7735190  )
+        41           O   tau(  41) = (   0.4011221   0.5034925   0.5323795  )
+        42           O   tau(  42) = (   0.6007145   0.5036114   0.4589637  )
+        43           O   tau(  43) = (   0.5260039   0.4450024   0.6545583  )
+        44           O   tau(  44) = (   0.6751021   0.4414663   0.6522872  )
+        45           O   tau(  45) = (   0.5247548   0.4419553   0.9659277  )
+        46           O   tau(  46) = (   0.6739325   0.4417980   0.9633972  )
+        47           O   tau(  47) = (   0.4006339   0.3454643   0.7373776  )
+        48           O   tau(  48) = (   0.4019225   0.3470757   1.0485901  )
+        49           O   tau(  49) = (   0.4027001   0.3350327   0.6029089  )
+        50           O   tau(  50) = (   0.4020136   0.3361669   0.9139176  )
+        51           O   tau(  51) = (   0.6074678   0.3167939   0.8120472  )
+        52           O   tau(  52) = (   0.6008437   0.3147060   0.5000362  )
+        53           Mo  tau(  53) = (   0.3080544   0.4290194   1.6951742  )
+        54           Mo  tau(  54) = (   0.4040272   0.5952492   1.6951742  )
+        55           Mo  tau(  55) = (   0.5000000   0.4290194   1.6951742  )
+        56           Mo  tau(  56) = (   0.5959728   0.5952492   1.6951742  )
+        57           Mo  tau(  57) = (   0.4040272   0.4844294   1.2929635  )
+        58           Mo  tau(  58) = (   0.5000000   0.6506591   1.2929635  )
+        59           Mo  tau(  59) = (   0.5959728   0.4844294   1.2929635  )
+        60           Mo  tau(  60) = (   0.6919456   0.6506591   1.2929635  )
+        61           C   tau(  61) = (   0.3080544   0.4290194   1.1989122  )
+        62           C   tau(  62) = (   0.4040272   0.5952492   1.1989122  )
+        63           S   tau(  63) = (   0.5000000   0.4290194   1.1989122  )
+        64           S   tau(  64) = (   0.5959728   0.5952492   1.1989122  )
+        65           S   tau(  65) = (   0.4040272   0.4844294   1.7892223  )
+        66           S   tau(  66) = (   0.5000000   0.6506591   1.7892223  )
+        67           S   tau(  67) = (   0.5959728   0.4844294   1.7892223  )
+        68           S   tau(  68) = (   0.6919456   0.6506591   1.7892223  )
+        69           S   tau(  69) = (   0.3080544   0.4290194   1.3870149  )
+        70           S   tau(  70) = (   0.4040272   0.5952492   1.3870149  )
+        71           S   tau(  71) = (   0.5000000   0.4290194   1.3870149  )
+        72           S   tau(  72) = (   0.5959728   0.5952492   1.3870149  )
+        73           S   tau(  73) = (   0.4040272   0.4844294   1.6011260  )
+        74           S   tau(  74) = (   0.5000000   0.6506591   1.6011260  )
+        75           S   tau(  75) = (   0.5959728   0.4844294   1.6011260  )
+        76           S   tau(  76) = (   0.6919456   0.6506591   1.6011260  )
+        77           S   tau(  77) = (   0.3080544   0.4290194   1.4549014  )
+        78           C   tau(  78) = (   0.3080544   0.5032110   1.3832743  )
+        79           C   tau(  79) = (   0.3080544   0.3548279   1.3832743  )
+        80           C   tau(  80) = (   0.3080544   0.4716612   1.3068597  )
+        81           C   tau(  81) = (   0.3080544   0.3863777   1.3068597  )
+        82           H   tau(  82) = (   0.3080544   0.5658332   1.4009196  )
+        83           H   tau(  83) = (   0.3080544   0.2922057   1.4009196  )
+        84           H   tau(  84) = (   0.3080544   0.5085058   1.2530498  )
+        85           H   tau(  85) = (   0.3080544   0.3495331   1.2530498  )
+
+     number of k points=     1  Gaussian smearing, width (Ry)=  0.0200
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   2.0000000
+
+     Dense  grid:  6341853 G-vectors     FFT dimensions: ( 180, 200, 360)
+
+     Smooth grid:  2242085 G-vectors     FFT dimensions: ( 128, 144, 250)
+
+     Estimated max dynamical RAM per process >       3.62 GB
+
+     Estimated total dynamical RAM >      36.16 GB
+
+     Check: negative core charge=   -0.000010
+
+     Initial potential from superposition of free atoms
+
+     starting charge  593.02428, renormalised to  594.00000
+
+     negative rho (up, down):  3.779E-02 0.000E+00
+     Starting wfcs are  424 randomized atomic wfcs
+     Checking if some PAW data can be deallocated... 
+
+     total cpu time spent up to now is      256.1 secs
+
+     Self-consistent Calculation
+
+     iteration #  1     ecut=    40.00 Ry     beta= 0.30
+     Davidson diagonalization with overlap
+     ethr =  1.00E-02,  avg # of iterations =  4.0
+
+     negative rho (up, down):  4.089E-02 0.000E+00
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 0 on node 05170220cac9 exited on signal 9 (Killed).
+--------------------------------------------------------------------------

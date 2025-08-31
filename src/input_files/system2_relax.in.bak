@@ -2,7 +2,7 @@
     calculation = 'relax'
     restart_mode = 'from_scratch'
     prefix = 'system2'
-    pseudo_dir = '../../pseudopotentials/'
+    pseudo_dir = '../pseudopotentials/'
     outdir = './tmp_system2/'
     tprnfor = .true.
     tstress = .true.

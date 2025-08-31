@@ -29,7 +29,7 @@ def extract_relaxed_geometry(relax_output_file, system_name):
     last_cell = cell_blocks[-1] if cell_blocks else None
     
     # Get other necessary information from original input
-    input_file = relax_output_file.replace('_relax.out', '_relax.in')
+    input_file = f"../input_files/{system_name}_relax.in"
     
     with open(input_file, 'r') as f:
         original_input = f.read()
@@ -42,9 +42,12 @@ def extract_relaxed_geometry(relax_output_file, system_name):
     kpoints = re.search(r'K_POINTS.*?(?=\n\s*\n|$)', original_input, re.DOTALL).group(0)
     
     # Create SCF input with relaxed geometry
-    scf_input = control_section.replace("'relax'", "'scf'")
-    scf_input = scf_input.replace("calculation = 'vc-relax'", "calculation = 'scf'")
-    scf_input += "\n" + system_section + "\n" + electrons_section + "\n"
+    # Clean control section (remove smearing - it belongs in SYSTEM)
+    clean_control = control_section.replace("'relax'", "'scf'")
+    clean_control = re.sub(r'\s*smearing.*\n', '', clean_control)
+    clean_control = re.sub(r'\s*degauss.*\n', '', clean_control)
+
+    scf_input = clean_control + "\n" + system_section + "\n" + electrons_section + "\n"
     scf_input += atomic_species + "\n"
     scf_input += last_positions + "\n"
     

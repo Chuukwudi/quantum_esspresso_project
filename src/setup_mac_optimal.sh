@@ -28,8 +28,12 @@ done
 
 echo ""
 echo "System information:"
-sysctl -n hw.ncpu | xargs echo "CPU cores:"
-sysctl -n hw.memsize | awk '{print $1/1024/1024/1024 " GB"}' | xargs echo "Total RAM:"
+
+# Get CPU core count on Linux
+echo "CPU cores: $(nproc)"
+
+# Get total RAM on Linux and format it as GB
+echo "Total RAM: $(awk '/MemTotal/ {printf "%.2f GB", $2/1024/1024}' /proc/meminfo)"
 
 echo ""
 echo "Setup complete! Ready for optimal QE workflow."
